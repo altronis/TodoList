@@ -5,15 +5,15 @@ import 'firebase/auth';
 // THIS IS USED TO INITIALIZE THE firebase OBJECT
 // PUT YOUR FIREBASE PROJECT CONFIG STUFF HERE
 var firebaseConfig = {
-    apiKey: "AIzaSyCJxkqx-6PMJrZ7ACkrgbO55b5wmJdop1Y",
-    authDomain: "todo-rrf-316.firebaseapp.com",
-    databaseURL: "https://todo-rrf-316.firebaseio.com",
-    projectId: "todo-rrf-316",
-    storageBucket: "todo-rrf-316.appspot.com",
-    messagingSenderId: "892398996038",
-    appId: "1:892398996038:web:1fb9157fc6c5d266e01847",
-    measurementId: "G-TEGQB3MZ23"
-};
+    apiKey: "AIzaSyC28DJ0SDk_brW1XELKRODtQKnTCqJoxro",
+    authDomain: "todo-hw3-999ba.firebaseapp.com",
+    databaseURL: "https://todo-hw3-999ba.firebaseio.com",
+    projectId: "todo-hw3-999ba",
+    storageBucket: "todo-hw3-999ba.appspot.com",
+    messagingSenderId: "205451756894",
+    appId: "1:205451756894:web:4524d4ebbf57c042273bcf",
+    measurementId: "G-HRWZ397W3N"
+  };
 firebase.initializeApp(firebaseConfig);
 
 // NOW THE firebase OBJECT CAN BE CONNECTED TO THE STORE
