@@ -8,8 +8,8 @@ import { getFirestore } from 'redux-firestore';
 
 class ListScreen extends Component {
     state = {
-        name: '',
-        owner: '',
+        name: this.props.todoList.name,
+        owner: this.props.todoList.owner,
     }
 
     handleChange = (e) => {
@@ -19,6 +19,15 @@ class ListScreen extends Component {
             ...state,
             [target.id]: target.value,
         }));
+
+        // Update the database 
+        const fireStore = getFirestore().collection("todoLists").doc(this.props.todoList.id);
+
+        fireStore.update({
+            [target.id]: target.value
+        }).then(function() {
+            console.log("Database updated");
+        })
     }
 
     componentDidMount() {
@@ -46,11 +55,11 @@ class ListScreen extends Component {
                 <h5 className="grey-text text-darken-3">Todo List</h5>
                 <div className="input-field">
                     <label htmlFor="email">Name</label>
-                    <input className="active" type="text" name="name" id="name" onChange={this.handleChange} value={todoList.name} />
+                    <input className="active" type="text" name="name" id="name" onBlur={this.handleChange} defaultValue={this.state.name} />
                 </div>
                 <div className="input-field">
                     <label htmlFor="password">Owner</label>
-                    <input className="active" type="text" name="owner" id="owner" onChange={this.handleChange} value={todoList.owner} />
+                    <input className="active" type="text" name="owner" id="owner" onBlur={this.handleChange} defaultValue={this.state.owner} />
                 </div>
                 <ItemsList todoList={todoList} />
             </div>
@@ -62,9 +71,6 @@ const mapStateToProps = (state, ownProps) => {
   const { id } = ownProps.match.params;
   const { todoLists } = state.firestore.data;
   const todoList = todoLists ? todoLists[id] : null;
-  console.log(id);
-  console.log(state);
-  console.log(todoList);
   todoList.id = id;
 
   return {
