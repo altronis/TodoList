@@ -5,9 +5,30 @@ import { compose } from 'redux';
 import TodoListCard from './TodoListCard';
 
 class TodoListLinks extends React.Component {
+    compare(first, second) {
+        let firstTime = first.timeStamp;
+        let secondTime = second.timeStamp;
+
+        if (firstTime < secondTime)
+            return 1;
+
+        if (firstTime > secondTime)
+            return -1;
+        
+        return 0;
+    }
+
     render() {
-        const todoLists = this.props.todoLists;
-        console.log(todoLists);
+        // Copy this.props.todoLists
+        let todoLists;
+
+        if (this.props.todoLists != null) {
+            todoLists = [...this.props.todoLists];
+
+            // Sort todoLists by decreasing timeStamp 
+            todoLists.sort(this.compare);
+        }
+
         return (
             <div className="todo-lists section">
                 {todoLists && todoLists.map(todoList => (

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import ItemsList from './ItemsList.js'
 import { firestoreConnect } from 'react-redux-firebase';
+import { getFirestore } from 'redux-firestore';
 
 class ListScreen extends Component {
     state = {
@@ -18,6 +19,19 @@ class ListScreen extends Component {
             ...state,
             [target.id]: target.value,
         }));
+    }
+
+    componentDidMount() {
+        // Set timestamp of todoList to now
+        const todoList = this.props.todoList;
+        const thisDoc = getFirestore().collection("todoLists").doc(todoList.id);
+        const timeNow = Date.now();
+        
+        thisDoc.update({
+            timeStamp: timeNow
+        }).then(function() {
+            console.log("Timestamp updated");
+        });
     }
 
     render() {
@@ -48,6 +62,9 @@ const mapStateToProps = (state, ownProps) => {
   const { id } = ownProps.match.params;
   const { todoLists } = state.firestore.data;
   const todoList = todoLists ? todoLists[id] : null;
+  console.log(id);
+  console.log(state);
+  console.log(todoList);
   todoList.id = id;
 
   return {
