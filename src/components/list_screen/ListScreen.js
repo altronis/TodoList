@@ -21,7 +21,7 @@ class ListScreen extends Component {
         }));
 
         // Update the database 
-        const fireStore = getFirestore().collection("todoLists").doc(this.props.todoList.id);
+        const fireStore = getFirestore.collection("todoLists").doc(this.props.todoList.id);
 
         fireStore.update({
             [target.id]: target.value

@@ -18,15 +18,18 @@ class HomeScreen extends Component {
         const fireStore = getFirestore();
         let id;  // ID of the new list
 
-        // Get number of documents in the collection
-        fireStore.collection("todoLists").get().then(function(querySnapshot) {
-            id = querySnapshot.size.toString();
+        // Find the ID for a new list 
+        fireStore.collection("todoLists").orderBy("order", "desc").limit(1).get().then(function(querySnapshot) {
+            querySnapshot.forEach(function(doc) {
+                id = (doc.data().order + 1).toString();
+            });
         })
-        // Add a new list 
+        // Add a new list
         .then(function() {fireStore.collection('todoLists').doc(id).set({
             name: "Unknown",
             owner: "Unknown", 
             items: [],
+            order: parseInt(id),
             timeStamp: Date.now()  // Last accessed
         }) })
         // Update the newListID state variable so that the component gets re-rendered

@@ -48,7 +48,7 @@ class ReactReduxFirebaseApp extends React.Component {
         return (
             <Provider store={this.state.store}>
                 <ReactReduxFirebaseProvider {...this.state.rrfProps}>
-                    <App />
+                    <App store={this.state.store}/>
                 </ReactReduxFirebaseProvider>
             </Provider>
         )
