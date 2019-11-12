@@ -28,10 +28,16 @@ div.banner {
 form {
   padding: 20px;
   margin-top: 60px;
+  text-align: center;
 }
 
 form button, form h5 {
   margin: 20px 0;
+}
+
+.list_item_add_card {
+  text-align: center;
+  vertical-align: center;
 }
 
 input[type=text]:not(.browser-default):focus:not([readonly]),
@@ -47,4 +53,22 @@ textarea.materialize-textarea:focus:not([readonly]) + label,
 input[type=email]:not(.browser-default):focus:not([readonly]) + label,
 input[type=password]:not(.browser-default):focus:not([readonly]) + label{
   color: #ec407a !important;
+}
+
+/* ITEM SCREEN CONTROLS */
+#item_heading {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  margin-bottom: 1em;
+}
+
+/* ITEM SCREEN CLASSES */
+.item_prompt {
+  margin: 1em 0;
+}
+.item_input {
+  margin: 1em 0;
+}   
+form {
+  width:100%;
 }

@@ -38,3 +38,32 @@ div.banner {
 .home_new_list_button:hover {
   box-shadow: 1px 2px;
 }
+
+.list_item_add_card {
+  font-weight: bold;
+  font-size: 30pt;
+}
+
+/* ITEM SCREEN CONTROLS */
+#item_heading {
+  font-size: 16pt;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* ITEM SCREEN CLASSES */
+.item_prompt {
+  font-size: 14pt;
+  font-weight: bold;
+  line-height: 1;
+}
+.item_input {
+  font-size: 14pt;
+}
+.item_form_button {
+  font-size: 16pt;
+  padding: 5px;
+  margin: 5px;
+  box-shadow: 3px 3px;
+  border-radius: 5px;
+}
