@@ -44,6 +44,11 @@ div.banner {
   font-size: 30pt;
 }
 
+#trashcan {
+  font-size: 30pt;
+  cursor: pointer;
+}
+
 /* ITEM SCREEN CONTROLS */
 #item_heading {
   font-size: 16pt;

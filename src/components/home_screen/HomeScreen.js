@@ -16,7 +16,7 @@ class HomeScreen extends Component {
 
     handleNewList = () => {
         const fireStore = getFirestore();
-        let id;  // ID of the new list
+        let id = "0";  // ID of the new list
 
         // Find the ID for a new list 
         fireStore.collection("todoLists").orderBy("order", "desc").limit(1).get().then(function(querySnapshot) {

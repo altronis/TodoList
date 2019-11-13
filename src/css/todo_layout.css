@@ -25,14 +25,32 @@ div.banner {
   margin-top: 60px;
 }
 
+.list_header {
+  position: relative;
+}
+
 form {
   padding: 20px;
   margin-top: 60px;
   text-align: center;
 }
 
-form button, form h5 {
-  margin: 20px 0;
+.input-field {
+  margin: 0;
+}
+
+h5.header {
+  display: inline-block;
+}
+
+#trashcan {
+  position: absolute;
+  right: 5%;
+}
+
+.container.white {
+  max-width: none;
+  padding: 20px;
 }
 
 .list_item_add_card {

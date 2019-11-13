@@ -5,10 +5,6 @@ import { compose } from 'redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { getFirestore } from 'redux-firestore';
 
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.datepicker');
-});
-
 class ItemScreen extends Component {
     state = {
         redirect: false
@@ -17,7 +13,7 @@ class ItemScreen extends Component {
     handleCancel = () => {
         this.setState({redirect: true});
     }
-
+    
     handleSubmit = (event) => {
         const itemIndex = parseInt(this.props.itemId);
         let itemList = this.props.todoList.items;
@@ -88,21 +84,21 @@ class ItemScreen extends Component {
                     <div className="row">
                         <div className="input-field col s12">
                             <input id="description" type="text" defaultValue={item ? item.description : ""} />
-                            <label className="active" for="description">Description</label>
+                            <label className="active" htmlFor="description">Description</label>
                         </div>
                     </div>   
 
                     <div className="row">
                         <div className="input-field col s12">
                             <input id="assigned_to" type="text" defaultValue={item ? item.assigned_to : ""} />
-                            <label className="active" for="assigned_to">Assigned To</label>
+                            <label className="active" htmlFor="assigned_to">Assigned To</label>
                         </div>
                     </div>      
 
                     <div className="row">
                         <div className="input-field col s12">
-                            <input id="due_date" type="date" defaultValue={item ? item.due_date : new Date().toISOString().substring(0, 10)} />
-                            <label className="active" for="due_date">Due Date</label>
+                            <input id="due_date" type="date" defaultValue={item ? item.due_date : new Date().toISOString().substring(0, 10)}></input>
+                            <label className="active" htmlFor="due_date">Due Date</label>
                         </div>
                     </div>
 
