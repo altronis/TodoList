@@ -48,6 +48,10 @@ h5.header {
   right: 5%;
 }
 
+tr.item_row {
+  cursor: pointer;
+}
+
 .container.white {
   max-width: none;
   padding: 20px;

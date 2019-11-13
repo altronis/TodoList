@@ -10,14 +10,25 @@ class ItemsList extends React.Component {
         const items = todoList.items;
 
         return (
-            <div className="todo-lists section">
-                {items && items.map(function(item) {
-                    item.id = item.key;
-                    return (
-                        <ItemCard todoList={todoList} item={item} key={item.id}/>
-                    );})
-                }
-            </div>
+            <table className="todo-lists section striped">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Assigned To</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {items && items.map(function(item) {
+                        item.id = item.key;
+                        return (
+                            <ItemCard todoList={todoList} item={item} key={item.id}/>
+                        );})
+                    }
+                </tbody>
+            </table>
         );
     }
 }
