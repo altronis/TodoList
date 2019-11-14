@@ -15,7 +15,6 @@
 
 body {
   background-color: var(--swatch-foundation);
-  font-family: 'Lexend Exa';
 }
 
 div.banner {
@@ -42,11 +41,36 @@ div.banner {
 .list_item_add_card {
   font-weight: bold;
   font-size: 30pt;
+  color: black;
 }
 
 #trashcan {
   font-size: 30pt;
   cursor: pointer;
+}
+
+.fixed-action-btn .action {
+  opacity: 0;
+  transform: scale(0.4) translateX(40px) translateY(0px);
+  transition: 0.25s;
+}
+
+.fixed-action-btn.active .action {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1) translateX(0px) translateY(0px);
+  transition: 0.25s;
+}
+
+.dialog_button {
+  background-color: transparent;
+  font-size: 16px;
+  transition: 0.25s
+}
+
+#yes_button:hover {
+  color: red;
+  transition: 0.25s;
 }
 
 /* ITEM SCREEN CONTROLS */

@@ -35,7 +35,7 @@ form {
   text-align: center;
 }
 
-.input-field {
+.input-field.list {
   margin: 0;
 }
 
@@ -48,7 +48,7 @@ h5.header {
   right: 5%;
 }
 
-tr.item_row {
+tr.item_row, .clickable {
   cursor: pointer;
 }
 
@@ -60,6 +60,31 @@ tr.item_row {
 .list_item_add_card {
   text-align: center;
   vertical-align: center;
+}
+
+.action {
+  bottom: 7px;
+  right: 0 !important;
+}
+
+.fixed-action-btn {
+  position: relative;
+  right: 0;
+  bottom: 0;
+}
+
+.fixed-action-btn ul {
+  right: 90% !important;
+}
+
+.buttons {
+  text-align: center;
+}
+
+.dialog_button {
+  cursor: pointer;
+  margin: 0 10px;
+  border: none;
 }
 
 input[type=text]:not(.browser-default):focus:not([readonly]),

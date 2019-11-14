@@ -67,10 +67,15 @@ class ListScreen extends Component {
                 <div className="container white">
                     <div className="list_header">
                         <h5 className="header grey-text text-darken-3">Todo List</h5>
-                        <Modal header="Delete List?" trigger={trigger}>
+                        <Modal header="Delete List?" trigger={trigger}
+                            actions={
+                                <div className="buttons">
+                                    <button id="yes_button" className="dialog_button" onClick={this.handleDelete}>YES</button>
+                                    <button id="no_button" className="dialog_button modal-close">NO</button> <br />
+                                </div>
+                            }
+                        >
                             <strong>Are you sure you want to delete this list?</strong> <br />
-                            <button className="dialog_button" onClick={this.handleDelete}>Yes</button>
-                            <button className="dialog_button modal-close">No</button> <br />
                             The list will not be retreivable.
                         </Modal>
                     </div>
