@@ -89,6 +89,8 @@ class ItemCard extends React.Component {
             );
         }
 
+        const statusClass = item.completed ? " completed" : " pending";
+
         return (
             <tr id={"item" + this.props.item.id} className="item_row" onClick={this.redirect}>
                 <td>
@@ -101,7 +103,7 @@ class ItemCard extends React.Component {
                     <span className="card-title">{item.due_date}</span>
                 </td>
                 <td>
-                    <span className="card-title">{item.completed ? "Completed" : "Pending"}</span>
+                    <span className={"card-title" + statusClass}>{item.completed ? "Completed" : "Pending"}</span>
                 </td>
                 <td>
                     <Button

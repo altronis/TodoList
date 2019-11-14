@@ -70,8 +70,8 @@ class ListScreen extends Component {
                         <Modal header="Delete List?" trigger={trigger}
                             actions={
                                 <div className="buttons">
-                                    <button id="yes_button" className="dialog_button" onClick={this.handleDelete}>YES</button>
-                                    <button id="no_button" className="dialog_button modal-close">NO</button> <br />
+                                    <span id="yes_button" className="dialog_button" onClick={this.handleDelete}>YES</span>
+                                    <span id="no_button" className="dialog_button modal-close">NO</span>
                                 </div>
                             }
                         >

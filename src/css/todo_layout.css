@@ -20,9 +20,15 @@ body {
   top: 5%;
 }
 
+.new-list {
+  text-align: center;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
 div.banner {
   padding: 20px;
-  margin-top: 60px;
+  margin-top: 20px;
 }
 
 .list_header {
@@ -35,7 +41,7 @@ form {
   text-align: center;
 }
 
-.input-field.list {
+.input-field.item {
   margin: 0;
 }
 
@@ -60,6 +66,7 @@ tr.item_row, .clickable {
 .list_item_add_card {
   text-align: center;
   vertical-align: center;
+  margin-top: 20px;
 }
 
 .action {
@@ -83,8 +90,12 @@ tr.item_row, .clickable {
 
 .dialog_button {
   cursor: pointer;
-  margin: 0 10px;
+  margin: 0 15px;
   border: none;
+}
+
+.item-form-button {
+  font-size: 16px;
 }
 
 input[type=text]:not(.browser-default):focus:not([readonly]),
